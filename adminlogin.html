@@ -143,18 +143,20 @@ span.psw {
 
       <button type="submit">Login</button>
       <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me 
+        <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <span class="cancelbtn"><a href="home.html">Cancel</a></span>
+      <button class="cancelbtn" onclick="cancel()">Cancel</button>
       <span class="psw">Go to <a href="userlogin.html">User Login</a></span>
     </div>
   </form>
 
 <script>
-
+function cancel() {
+  window.open("home.html","_self");
+}
 </script>
 
   </body>

@@ -127,7 +127,7 @@ span.psw {
 </style>
   </head>
   <body>
-  <form class="modal-content animate" action="home.html" id="id01">
+  <form class="modal-content animate" action="home.html" id="id01" method="post">
     <div class="imgcontainer">
       <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
      <b>User Login</b>
@@ -144,19 +144,21 @@ span.psw {
       <button type="submit">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         <span ><a href="usersignup.html">Don't have an Account? Sign up.</a></span>
       </label>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <span class="cancelbtn"><a href="home.html">Cancel</a></span>
+      <button class="cancelbtn" onclick="cancel()">Cancel</button>
       <span class="psw">Go to <a href="adminlogin.html">Admin Login</a></span>
     </div>
   </form>
 
 <script>
-
+function cancel() {
+  window.open("home.html","_self");
+}
 </script>
 
   </body>

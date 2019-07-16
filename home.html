@@ -3,8 +3,125 @@
   <head>
     <meta charset="utf-8">
     <title>Auditorium Management System</title>
+    <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    .container {
+      padding: 16px;
+    }
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+
+    input[type=text], input[type=date]{
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 40%; /* Could be more or less, depending on screen size */
+    }
+    .modal-cont {
+      background-color: #fefefe;
+      border: 1px solid #888;
+      width: 30%; /* Could be more or less, depending on screen size */
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+
+    .statuscontainer {
+      text-align: left;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+    .topcorner{
+   position:absolute;
+   top:0;
+   right:0;
+   background-color: #4CAF50;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+  }
+    </style>
   </head>
   <body>
-Booking System
+<input type="button" class="topcorner" value="Logout" onclick="logout()">
+
+<form class="modal-content animate">
+  <div class="imgcontainer">
+    <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+   <b>Booking System</b>
+    <!-- document.getElementById('id01').style.display='none' -->
+  </div>
+<div class="container">
+Event Name <input type="text" name="event">
+Date <input type="date" name="date">
+Number of Days <input type="text" name="noofdays">
+<button type="button" onclick="document.getElementById('id01').style.display='block'">Check for Availability</button>
+
+</div>
+</form>
+<div class="modal" id="id01">
+  <form class="modal-content animate">
+    <div class="container">
+<b>Auditorium Status</b><br><br>
+<label >Availability:</label>
+<label name="availability">No</label><br><br>
+<label >Advanced Bookings done :</label>
+<label name="adv">Yes</label><br><br>
+Date till it becomes available :
+<label name="availdate">12-08-2019</label>
+<button type="button" onclick="document.getElementById('id01').style.display='none'">Ok</button>
+</div>
+</form>
+</div>
+
+<script>
+function logout() {
+  window.open("userlogin.html","_self");
+}
+</script>
   </body>
 </html>

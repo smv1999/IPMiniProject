@@ -127,7 +127,7 @@ span.psw {
 </style>
   </head>
   <body>
-    <form class="modal-content animate" action="home.html" id="id01">
+    <form class="modal-content animate" method="post" action="home.html" id="id01" onsubmit="return validate()" name="signup">
       <div class="imgcontainer">
         <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
        <b>User Sign Up</b>
@@ -140,7 +140,10 @@ span.psw {
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <button type="submit">Sign Up</button>
+        <label for="psw"><b>Re-enter Password</b></label>
+        <input type="password" placeholder="Re-enter Password" name="rpsw" required>
+
+        <button type="submit" >Sign Up</button>
         <label>
           <center><span ><a href="userlogin.html">Already have an Account? Log in.</a></span></center>
         </label>
@@ -153,6 +156,25 @@ span.psw {
     </form>
 
     <script>
+function validate() {
+
+  var pwd = document.signup.psw.value;
+  var rpwd = document.signup.rpsw.value;
+  if(pwd !=rpwd)
+  {
+    alert("Passwords do not match!");
+    return false;
+  }
+  if(pwd.length<6)
+  {
+    alert("Password is too short!");
+    return false;
+  }
+  else{
+    return true;
+  }
+
+}
 
     </script>
   </body>

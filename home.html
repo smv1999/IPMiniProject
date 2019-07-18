@@ -136,16 +136,16 @@ canvas{ display: block; }
       <input type="button" class="botcorner buttonc" value="AudyBuddy" onclick="document.getElementById('id02').style.display='block'">
 
        <br><br>
-      <form class="modal-content animate">
+      <form class="modal-content animate" name="homeform" method="post">
         <div class="imgcontainer">
           <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
          <b>Booking System</b>
         </div>
       <div class="container">
-      Event Name <input type="text" name="event">
-      Date <input type="date" name="date">
-      Number of Days <input type="text" name="noofdays">
-      <button type="button" onclick="document.getElementById('id01').style.display='block'">Check for Availability</button>
+      Event Name <input type="text" placeholder="Event Name" name="eventname" >
+      Date <input type="date" name="dateofevent" >
+      Number of Days <input type="text" placeholder="Number of Days" name="noofdays" >
+      <button type="button" onclick="validate()">Check for Availability</button>
 
       </div>
       </form>
@@ -183,6 +183,22 @@ canvas{ display: block; }
 <script>
 function logout() {
   window.open("userlogin.html","_self");
+}
+function validate() {
+  var evt = document.homeform.eventname.value;
+  var date = document.homeform.dateofevent.value;
+  var nod = document.homeform.noofdays.value;
+  if(evt.length==0 || date.length==0 || nod.length==0)
+  {
+    alert("All fields must be filled!");
+    return false;
+  }
+  else {
+    {
+      document.getElementById('id01').style.display='block';
+      return true;
+    }
+  }
 }
 function home()
 {

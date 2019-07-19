@@ -96,7 +96,7 @@
  cursor: pointer;
 }
   .botcorner{
- position:absolute;
+ position:relative;
  bottom:0;
  right:0;
  background-color: #4CAF50;
@@ -131,9 +131,11 @@ canvas{ display: block; }
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <div id="particles-js">
+      <div class="container">
+      <marquee><font color="white" size="5">Welcome to AudyBuddy</font></marquee>
+    </div>
       <input type="button" class="topcorner" value="Logout" onclick="logout()">
       <label name="websitename" class="leftcorner" onclick="home()" style = "font-family:georgia,garamond,serif;font-size:16px;font-style:bold;">AudyBuddy</label>
-      <input type="button" class="botcorner buttonc" value="AudyBuddy" onclick="document.getElementById('id02').style.display='block'">
 
        <br><br>
       <form class="modal-content animate" name="homeform" method="post">
@@ -177,8 +179,14 @@ canvas{ display: block; }
       </div>
 
     </div>
-
-
+    <div class="container">
+    <marquee><img src="first.jpg" height="400" width="430"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <img src="second.jpg" height="400" width="430"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <img src="third.jpg" height="400" width="430"></marquee>
+    </div>
+    <input type="button" class="botcorner buttonc" value="AudyBuddy" onclick="document.getElementById('id02').style.display='block'">
+    <center>&copy; 2019 AudyBuddy.All Rights Reserved.</center>
+  </body>
 
 <script>
 function logout() {
@@ -327,5 +335,4 @@ update = function() {
 };
 requestAnimationFrame(update);
 </script>
-  </body>
 </html>

@@ -92,6 +92,17 @@ span.psw {
   font-size: 35px;
   font-weight: bold;
 }
+.leftcorner{
+ position:absolute;
+ top:0;
+ left:0;
+ background-color: #4CAF50;
+ color: white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ cursor: pointer;
+}
 
 .close:hover,
 .close:focus {
@@ -142,6 +153,8 @@ canvas{ display: block;}
       <div class="container">
       <marquee><font color="white" size="5">Welcome to AudyBuddy</font></marquee>
     </div>
+    <label name="websitename" class="leftcorner" onclick="home()" style = "font-family:georgia,garamond,serif;font-size:16px;font-style:bold;">AudyBuddy</label>
+
   <form class="modal-content animate" action="home.html" id="id01" method="post">
     <div class="imgcontainer">
       <center><img src="userimage.png" alt="Avatar" class="avatar"></center>
@@ -169,11 +182,17 @@ canvas{ display: block;}
     </div>
   </form>
 </div>
+
+
 <center>&copy; 2019 AudyBuddy.All Rights Reserved.</center>
 </body>
 <script src="particles.js">
 function cancel() {
   window.open("home.html","_self");
+}
+function home()
+{
+  window.open("userlogin.html","_self");
 }
 
 </script>

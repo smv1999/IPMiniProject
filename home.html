@@ -117,6 +117,63 @@ margin: 8px 0;
 border: none;
 cursor: pointer;
 }
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 30%;
+  padding: 30px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
 canvas{ display: block; }
 /* ---- particles.js container ---- */
  #particles-js{ position:relative; width: 100%; height: 100%; background-color: #323840; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
@@ -129,7 +186,6 @@ canvas{ display: block; }
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
     <div id="particles-js">
       <div class="container">
       <marquee><font color="white" size="5">Welcome to AudyBuddy</font></marquee>
@@ -138,30 +194,68 @@ canvas{ display: block; }
       <label name="websitename" class="leftcorner" onclick="home()" style = "font-family:georgia,garamond,serif;font-size:16px;font-style:bold;">AudyBuddy</label>
 
        <br><br>
+       <center><table border="2" cellpadding="10" cellspacing="8">
+          <tr>
+            <td><font color="white" >Auditorium Name</font></td>
+            <td><font color="white" >Address</font></td>
+            <td><font color="white" >Seats</font></td>
+            <td><font color="white" >Cost</font></td>
+          </tr>
+          <tr>
+            <td>Festfire</td>
+            <td><a href="https://www.google.com/maps/place/K.+K.+Nagar,+Chennai,+Tamil+Nadu/@13.0394154,80.1824003,14z/data=!3m1!4b1!4m5!3m4!1s0x3a5266dbdecf0149:0x4d3edefeb97aa0de!8m2!3d13.0410013!4d80.1993919" target="_blank"><font color="black">K K Nagar</font></a></td>
+            <td>500</td>
+            <td>100000</td>
+          </tr>
+          <tr>
+            <td>Festfreeze</td>
+            <td><a href="https://www.google.com/maps/place/Ashok+Nagar,+Chennai,+Tamil+Nadu/@13.0358668,80.2035567,15z/data=!3m1!4b1!4m5!3m4!1s0x3a5266de74ad88a3:0xd842d88783c1bd4!8m2!3d13.0373222!4d80.2123115" target="_blank"> <font color="black">Ashok Nagar</font></a></td>
+            <td>750</td>
+            <td>150000</td>
+          </tr>
+          <tr>
+            <td>Festgrand</td>
+            <td><a href="https://www.google.com/maps/place/Vadapalani,+Chennai,+Tamil+Nadu/@13.0521844,80.2026812,15z/data=!3m1!4b1!4m5!3m4!1s0x3a5266bf5a08c45f:0x9478e1cd7e7f1723!8m2!3d13.0499711!4d80.2121306" target="_blank"><font color="black">Vadapalani</font></a></td>
+            <td>1000</td>
+            <td>200000</td>
+          </tr>
+          <tr>
+            <td>Festpomp</td>
+            <td><a href="https://www.google.com/maps/place/Velachery,+Chennai,+Tamil+Nadu/@12.9791197,80.2007085,14z/data=!3m1!4b1!4m5!3m4!1s0x3a525d9ff2065a3b:0x66435015604038cc!8m2!3d12.9800691!4d80.2184218" target="_blank"><font color="black">Velachery</font></a></td>
+            <td>1500</td>
+            <td>250000</td>
+          </tr>
+        </table></center>
       <form class="modal-content animate" name="homeform" method="post">
         <div class="imgcontainer">
           <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
          <b>Booking System</b>
-        </div>
+        </div>  
+
       <div class="container">
+      Auditorium Name <input type="text" placeholder="Auditorium Name" name="audyname" >
       Event Name <input type="text" placeholder="Event Name" name="eventname" >
       Date <input type="date" name="dateofevent" >
-      Number of Days <input type="text" placeholder="Number of Days" name="noofdays" >
       <button type="button" onclick="validate()">Check for Availability</button>
 
       </div>
       </form>
+
+
+<!-- booking confirmed -->
+<div id="snackbar">Your Booking is Confirmed</div>
+
       <div class="modal" id="id01">
         <form class="modal-content animate">
           <div class="container">
       <b>Auditorium Status</b><br><br>
       <label >Availability:</label>
-      <label name="availability">No</label><br><br>
+      <label name="availability">Yes</label><br><br>
       <label >Advanced Bookings done :</label>
-      <label name="adv">Yes</label><br><br>
+      <label name="adv">No</label><br><br>
       Date till it becomes available :
-      <label name="availdate">12-08-2019</label>
-      <button type="button" onclick="document.getElementById('id01').style.display='none'">Ok</button>
+      <label name="availdate">N/A</label>
+      <button type="button" onclick="check()">Ok</button>
       </div>
       </form>
       </div>
@@ -178,27 +272,109 @@ canvas{ display: block; }
       </form>
       </div>
 
+
+
+      <!-- div 3 -->
+      <div class="modal" id="id03"> 
+        <form class="modal-content animate">
+          <div class="container">
+            <b>Auditorium Booking Request</b><br><br><br>
+            Cost<input type="text" name="cost">
+            Select Time Slot
+            <div class="row">
+  <div class="column" style="background-color:#FFFFFF;">
+    <button type="button">9:00 AM - 12:00 PM</button>
+  </div>
+  <div class="column" style="background-color:#FFFFFF;">
+    <button type="button">9:00 AM - 12:00 PM</button>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#FFFFFF;">
+    <button type="button">9:00 AM - 12:00 PM</button>
+
+  </div>
+  <div class="column" style="background-color:#FFFFFF;">
+    <button type="button">9:00 AM - 12:00 PM</button>
+
+  </div>
+</div>
+            <button type="button" onclick="confirm()">Confirm</button>
+
+          </div>
+        </form>
+      </div>
+
     </div>
     <div class="container">
-    <marquee><img src="first.jpg" height="400" width="430"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <img src="second.jpg" height="400" width="430"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <img src="third.jpg" height="400" width="430"></marquee>
+    <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="400" width="430"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="second.jpg" target="_blank"><img src="second.jpg" height="400" width="430"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="third.jpg" target="_blank"><img src="third.jpg" height="400" width="430"></a></marquee>
     </div>
     <input type="button" class="botcorner buttonc" value="AudyBuddy" onclick="document.getElementById('id02').style.display='block'">
     <center>&copy; 2019 AudyBuddy.All Rights Reserved.</center>
   </body>
 
 <script>
+  
+
+
+  function confirm()
+  {
+    var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+    x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    // window.open("home.html","_self");
+    document.getElementById('id03').style.display='none';
+
+  }
+  function check() {
+    document.getElementById('id01').style.display='none';
+    document.getElementById('id02').style.display='none';
+    document.getElementById('id03').style.display='block';
+
+
+
+  }
 function logout() {
   window.open("userlogin.html","_self");
 }
 function validate() {
+  var name = document.homeform.audyname.value;
   var evt = document.homeform.eventname.value;
   var date = document.homeform.dateofevent.value;
-  var nod = document.homeform.noofdays.value;
-  if(evt.length==0 || date.length==0 || nod.length==0)
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1; //January is 0!
+
+var yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = '0' + dd;
+} 
+if (mm < 10) {
+  mm = '0' + mm;
+} 
+var to = dd + '-' + mm + '-' + yyyy;
+var newsysdate = new Date(to);
+var newdate = new Date(date);
+console.log(typeof newsysdate);
+console.log(typeof newdate);
+
+  if(evt.length==0 || date.length==0 ||name.length==0)
   {
     alert("All fields must be filled!");
+    return false;
+  }
+  // changes to be made
+  if (newdate<newsysdate) {
+
+    alert("Enter Valid Date!");
     return false;
   }
   else {

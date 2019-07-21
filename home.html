@@ -296,9 +296,9 @@ canvas{ display: block; }
         </div>  
 
       <div class="container">
-      Auditorium Name <input type="text" placeholder="Auditorium Name" name="audyname" >
-      Event Name <input type="text" placeholder="Event Name" name="eventname" >
-      Date <input type="date" name="dateofevent" >
+      Auditorium Name <input type="text" placeholder="Auditorium Name" id="audname" >
+      Event Name <input type="text" placeholder="Event Name" id="evtname" >
+      Date <input type="date" id="dateofevt" >
       <button type="button" onclick="validate()">Check for Availability</button>
 
       </div>
@@ -360,21 +360,21 @@ canvas{ display: block; }
             Select Time Slot
             <div class="row">
   <div class="column" style="background-color:#FFFFFF;">
-    <button type="button">9:00 AM - 12:00 PM</button>
+    <button type="button" id="firstslot" onclick="setColor('firstslot')">9:00 AM - 12:00 PM</button>
   </div>
   <div class="column" style="background-color:#FFFFFF;">
-    <button type="button">12:30 PM - 03:30 PM</button>
+    <button type="button" id="secondslot" onclick="setColor('secondslot')">12:30 PM - 03:30 PM</button>
 
   </div>
 </div>
 
 <div class="row">
   <div class="column" style="background-color:#FFFFFF;">
-    <button type="button">4:00 PM - 07:00 PM</button>
+    <button type="button" id="thirdslot" onclick="setColor('thirdslot')">4:00 PM - 07:00 PM</button>
 
   </div>
   <div class="column" style="background-color:#FFFFFF;">
-    <button type="button">7:30 PM - 10:30 PM</button>
+    <button type="button" id="fourthslot" onclick="setColor('fourthslot')">7:30 PM - 10:30 PM</button>
 
   </div>
 </div>
@@ -433,6 +433,19 @@ function chat() {
   }
 }
 
+var count = 1;
+    function setColor(btn) {
+        var property = document.getElementById(btn);
+        if (count == 0) {
+            property.style.backgroundColor = "#4CAF50"
+            count = 1;        
+        }
+        else {
+            property.style.backgroundColor = "#7FFF00"
+            count = 0;
+        }
+    }
+
   function confirm()
   {
     var x = document.getElementById("snackbar");
@@ -459,9 +472,9 @@ function logout() {
   window.open("userlogin.html","_self");
 }
 function validate() {
-  var name = document.homeform.audyname.value;
-  var evt = document.homeform.eventname.value;
-  var date = document.homeform.dateofevent.value;
+  var name = document.getElementById("audname").value;
+  var evt = document.getElementById("evtname").value;
+  var date = document.getElementById("dateofevt").value;
   var today = new Date();
   var dd = today.getDate();
   var mm = today.getMonth() + 1; //January is 0!

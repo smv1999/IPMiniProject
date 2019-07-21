@@ -130,6 +130,54 @@ cursor: pointer;
   display: table;
   clear: both;
 }
+.bgimg {
+  /* Background image */
+  background-image:'first.jpg';
+  /* Full-screen */
+  height: 100%;
+  /* Center the background image */
+  background-position: center;
+  /* Scale and zoom in the image */
+  background-size: cover;
+  /* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+  position: relative;
+  /* Add a white text color to all elements inside the .bgimg container */
+  color: white;
+  /* Add a font */
+  font-family: "Courier New", Courier, monospace;
+  /* Set the font-size to 25 pixels */
+  font-size: 25px;
+}
+
+/* Position text in the top-left corner */
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+
+/* Position text in the bottom-left corner */
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+/* Position text in the middle */
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the <hr> element */
+hr {
+  margin: auto;
+  width: 40%;
+}
 #snackbar {
   visibility: hidden; /* Hidden by default. Visible on click */
   min-width: 250px; /* Set a default minimum width */
@@ -202,30 +250,45 @@ canvas{ display: block; }
             <td><font color="white" >Cost</font></td>
           </tr>
           <tr>
-            <td>Festfire</td>
-            <td><a href="https://www.google.com/maps/place/K.+K.+Nagar,+Chennai,+Tamil+Nadu/@13.0394154,80.1824003,14z/data=!3m1!4b1!4m5!3m4!1s0x3a5266dbdecf0149:0x4d3edefeb97aa0de!8m2!3d13.0410013!4d80.1993919" target="_blank"><font color="black">K K Nagar</font></a></td>
-            <td>500</td>
-            <td>100000</td>
+            <td><font color="#ADD8E6">Festfire</font></td>
+            <td><a href="https://www.google.com/maps/place/K.+K.+Nagar,+Chennai,+Tamil+Nadu/@13.0394154,80.1824003,14z/data=!3m1!4b1!4m5!3m4!1s0x3a5266dbdecf0149:0x4d3edefeb97aa0de!8m2!3d13.0410013!4d80.1993919" target="_blank"><font color="#ADD8E6">K K Nagar</font></a></td>
+            <td><font color="#ADD8E6">500</font></td>
+            <td><font color="#ADD8E6">100000</font></td>
           </tr>
           <tr>
-            <td>Festfreeze</td>
-            <td><a href="https://www.google.com/maps/place/Ashok+Nagar,+Chennai,+Tamil+Nadu/@13.0358668,80.2035567,15z/data=!3m1!4b1!4m5!3m4!1s0x3a5266de74ad88a3:0xd842d88783c1bd4!8m2!3d13.0373222!4d80.2123115" target="_blank"> <font color="black">Ashok Nagar</font></a></td>
-            <td>750</td>
-            <td>150000</td>
+            <td><font color="#ADD8E6">Festfreeze</font></td>
+            <td><a href="https://www.google.com/maps/place/Ashok+Nagar,+Chennai,+Tamil+Nadu/@13.0358668,80.2035567,15z/data=!3m1!4b1!4m5!3m4!1s0x3a5266de74ad88a3:0xd842d88783c1bd4!8m2!3d13.0373222!4d80.2123115" target="_blank"> <font color="#ADD8E6">Ashok Nagar</font></a></td>
+            <td><font color="#ADD8E6">750</font></td>
+            <td><font color="#ADD8E6">150000</font></td>
           </tr>
           <tr>
-            <td>Festgrand</td>
-            <td><a href="https://www.google.com/maps/place/Vadapalani,+Chennai,+Tamil+Nadu/@13.0521844,80.2026812,15z/data=!3m1!4b1!4m5!3m4!1s0x3a5266bf5a08c45f:0x9478e1cd7e7f1723!8m2!3d13.0499711!4d80.2121306" target="_blank"><font color="black">Vadapalani</font></a></td>
-            <td>1000</td>
-            <td>200000</td>
+            <td><font color="#ADD8E6">Festgrand</font></td>
+            <td><a href="https://www.google.com/maps/place/Vadapalani,+Chennai,+Tamil+Nadu/@13.0521844,80.2026812,15z/data=!3m1!4b1!4m5!3m4!1s0x3a5266bf5a08c45f:0x9478e1cd7e7f1723!8m2!3d13.0499711!4d80.2121306" target="_blank"><font color="#ADD8E6">Vadapalani</font></a></td>
+            <td><font color="#ADD8E6">1000</font></td>
+            <td><font color="#ADD8E6">200000</font></td>
           </tr>
           <tr>
-            <td>Festpomp</td>
-            <td><a href="https://www.google.com/maps/place/Velachery,+Chennai,+Tamil+Nadu/@12.9791197,80.2007085,14z/data=!3m1!4b1!4m5!3m4!1s0x3a525d9ff2065a3b:0x66435015604038cc!8m2!3d12.9800691!4d80.2184218" target="_blank"><font color="black">Velachery</font></a></td>
-            <td>1500</td>
-            <td>250000</td>
+            <td><font color="#ADD8E6">Festpomp</font></td>
+            <td><a href="https://www.google.com/maps/place/Velachery,+Chennai,+Tamil+Nadu/@12.9791197,80.2007085,14z/data=!3m1!4b1!4m5!3m4!1s0x3a525d9ff2065a3b:0x66435015604038cc!8m2!3d12.9800691!4d80.2184218" target="_blank"><font color="#ADD8E6">Velachery</font></a></td>
+            <td><font color="#ADD8E6">1500</font></td>
+            <td><font color="#ADD8E6">250000</font></td>
           </tr>
         </table></center>
+        <br><br><br><br><br>
+        <!-- timer -->
+        <div class="bgimg">
+  
+  <div class="middle">
+        <p>New Auditorium At Saidapet</p>
+  </div>
+  <div class="middle">
+        <h1>COMING SOON</h1>
+            <hr>
+       <p id="demo"></p>
+  </div>
+</div>
+<br><br><br>
+
       <form class="modal-content animate" name="homeform" method="post">
         <div class="imgcontainer">
           <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
@@ -265,13 +328,27 @@ canvas{ display: block; }
         <form class="modal-content animate  botcorner2">
           <div class="container">
       <b>Hello Sir/Madam! How may I be of your help?</b>
-      <input type="text" name="userchat">
-      <button type="button" onclick="return chat()">OK</button>
+      <input type="text" placeholder="Type Message..." id="userchat">
+      <button type="button" onclick="chat()">OK</button>
       <button type="button" onclick="document.getElementById('id02').style.display='none'">CLOSE</button>
       </div>
       </form>
       </div>
 
+        <div class="modal" id="about">
+      <form class="modal-content animate" name="homeform" method="post">
+        <div class="imgcontainer">
+          <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+         <b>About Us</b>
+        </div>  
+
+      <div class="container">
+      <p>Welcome to AudyBuddy - One Stop for Auditorium Booking<br>Aren't you tired of booking Auditoriums manually? Now you can do it easily with the help of AudyBuddy.</p>
+      <button type="button" onclick="document.getElementById('about').style.display='none'">OK</button>
+
+      </div>
+      </form>
+</div>
 
 
       <!-- div 3 -->
@@ -286,18 +363,18 @@ canvas{ display: block; }
     <button type="button">9:00 AM - 12:00 PM</button>
   </div>
   <div class="column" style="background-color:#FFFFFF;">
-    <button type="button">9:00 AM - 12:00 PM</button>
+    <button type="button">12:30 PM - 03:30 PM</button>
 
   </div>
 </div>
 
 <div class="row">
   <div class="column" style="background-color:#FFFFFF;">
-    <button type="button">9:00 AM - 12:00 PM</button>
+    <button type="button">4:00 PM - 07:00 PM</button>
 
   </div>
   <div class="column" style="background-color:#FFFFFF;">
-    <button type="button">9:00 AM - 12:00 PM</button>
+    <button type="button">7:30 PM - 10:30 PM</button>
 
   </div>
 </div>
@@ -318,8 +395,43 @@ canvas{ display: block; }
   </body>
 
 <script>
-  
 
+  // Set the date we're counting down to
+var countDownDate = new Date("Aug 15, 2019 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+  
+function chat() {
+  var chatter = document.getElementById("userchat").value;
+  if(chatter.includes("availability"))
+  {  //action 
+    window.open("userlogin.html");
+  }
+}
 
   function confirm()
   {
@@ -332,6 +444,7 @@ canvas{ display: block; }
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     // window.open("home.html","_self");
     document.getElementById('id03').style.display='none';
+    
 
   }
   function check() {
@@ -386,7 +499,7 @@ console.log(typeof newdate);
 }
 function home()
 {
-  window.open("home.html","_self");
+  document.getElementById('about').style.display='block';
 }
 particlesJS("particles-js", {
   "particles": {

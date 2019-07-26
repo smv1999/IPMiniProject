@@ -75,12 +75,54 @@ span.psw {
   padding-top: 60px;
 }
 
+.bg{
+  background: #323840;
+
+ }
+ .sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 220px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #323840; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 30px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
+  width: 30%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -147,13 +189,20 @@ canvas{ display: block;}
 .buttonc {border-radius: 60%;}
 </style>
   </head>
-  <body>
+  <body class="bg">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <div class="sidenav">
+  <img src="audy.PNG" height="70" width="70">
+  <a href="home.html">AudyBuddy.com</a><br><br>
+  <a href="about.html">About</a>
+  <a href="userlogin.html">Login</a>
+  <a href="contact.html">Contact</a>
+</div>
     <div id="particles-js">
       <div class="container">
       <marquee><font color="white" size="5">Welcome to AudyBuddy</font></marquee>
     </div>
-    <label name="websitename" class="leftcorner" onclick="home()" style = "font-family:georgia,garamond,serif;font-size:16px;font-style:bold;">AudyBuddy</label>
+    
 
   <form class="modal-content animate" action="home.html" id="id01" method="post">
     <div class="imgcontainer">
@@ -170,9 +219,8 @@ canvas{ display: block;}
 
       <button type="submit">Login</button>
       <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <span ><a href="usersignup.html">Don't have an Account? Sign up.</a></span>
+        <input type="checkbox" checked="checked" name="remember"> Remember me <br>
+       <center><span ><a href="usersignup.html">Don't have an Account? Sign up.</a></span></center>
       </label>
     </div>
 

@@ -200,7 +200,8 @@ canvas{ display: block; }
       <div class="container">
       <marquee><font color="white" size="5">Welcome to AudyBuddy</font></marquee>
     </div>
-    <form class="modal-content animate" method="post" action="home.html" id="id01" onsubmit="return validate()" name="signup">
+    <form class="modal-content animate" method="post"  id="id01" action="home.html" onsubmit="return validate(document.signup.email)" name="signup">
+      
       <div class="imgcontainer">
         <center><img src="userimage.png" alt="Avatar" class="avatar"></center>
        <b>User Sign Up</b>
@@ -210,13 +211,16 @@ canvas{ display: block; }
         <label for="uname"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="uname" required>
 
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
 
         <label for="psw"><b>Re-enter Password</b></label>
         <input type="password" placeholder="Re-enter Password" name="rpsw" required>
 
-        <button type="submit" >Sign Up</button>
+        <button type="submit">Sign Up</button>
         <label>
           <center><span ><a href="userlogin.html">Already have an Account? Log in.</a></span></center>
         </label>
@@ -240,10 +244,17 @@ canvas{ display: block; }
     function cancel() {
       window.open("home.html","_self");
     }
-function validate() {
+function validate(inputText) {
 
   var pwd = document.signup.psw.value;
   var rpwd = document.signup.rpsw.value;
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(!(inputText.value.match(mailformat)))
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
   if(pwd !=rpwd)
   {
     alert("Passwords do not match!");

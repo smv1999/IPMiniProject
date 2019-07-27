@@ -76,7 +76,7 @@ span.psw {
 }
 
 .bg{
-  background: #323840;
+  background: #FFFFFF;
 
  }
  .sidenav {
@@ -96,7 +96,7 @@ span.psw {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: #D2691E;
   display: block;
 }
 
@@ -181,7 +181,7 @@ span.psw {
 
 canvas{ display: block;}
 /* ---- particles.js container ---- */
- #particles-js{ position:relative; width: 100%; height: 100%; background-color: #323840; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
+ #particles-js{ position:relative; width: 100%; height: 100%; background-color: #FFFFFF; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
  /* ---- stats.js ---- */
  .count-particles{ background: #000022; position:relative; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; }
 .js-count-particles{ font-size: 1.1em; }
@@ -189,7 +189,7 @@ canvas{ display: block;}
 .buttonc {border-radius: 60%;}
 </style>
   </head>
-  <body class="bg">
+  <body class="bg" >
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
       <div class="sidenav">
   <img src="audy.PNG" height="70" width="70">
@@ -204,7 +204,7 @@ canvas{ display: block;}
     </div>
     
 
-  <form class="modal-content animate" action="index.html" id="id01" method="post">
+  <form class="modal-content animate" action="home.html" id="id01" method="post">
     <div class="imgcontainer">
       <center><img src="userimage.png" alt="Avatar" class="avatar"></center>
      <b>User Login</b>
@@ -225,7 +225,7 @@ canvas{ display: block;}
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
-      <button class="cancelbtn" onclick="cancel()">Cancel</button>
+      <button  class="cancelbtn" onclick="cancel()">Cancel</button>
       <span class="psw">Go to <a href="adminlogin.html">Admin Login</a></span>
     </div>
   </form>
@@ -234,14 +234,133 @@ canvas{ display: block;}
 
 <center>&copy; 2019 AudyBuddy.All Rights Reserved.</center>
 </body>
-<script src="particles.js">
+<script>
 function cancel() {
   window.open("index.html","_self");
 }
-function home()
-{
-  window.open("userlogin.html","_self");
-}
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 88,
+      "density": {
+        "enable": true,
+        "value_area": 700
+      }
+    },
+    "color": {
+      "value": ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 15
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1.5,
+        "opacity_min": 0.15,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 2.5,
+      "random": false,
+      "anim": {
+        "enable": true,
+        "speed": 2,
+        "size_min": 0.15,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 110,
+      "color": "#33b1f8",
+      "opacity": 0.25,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1.6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": false,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": false,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 40,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 200,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
+var count_particles, stats, update;
+stats = new Stats;
+stats.setMode(0);
+stats.domElement.style.position = 'absolute';
+stats.domElement.style.left = '0px';
+stats.domElement.style.top = '0px';
+document.body.appendChild(stats.domElement);
+count_particles = document.querySelector('.js-count-particles');
+update = function() {
+  stats.begin();
+  stats.end();
+  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+  }
+  requestAnimationFrame(update);
+};
+requestAnimationFrame(update);
 
 </script>
 

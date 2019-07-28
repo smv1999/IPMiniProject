@@ -9,15 +9,43 @@
   background: #FFFFFF;
 
  }
-.textcolor{
-	color: black;
+ @media screen and (max-height: 450px) {
+
+  .topside{padding-top: 15px;}
 }
-.headcolor{
+.topside
+{
+  padding-top: 30px;
+  right: 70px;
+  position: fixed;
+  top: 30px;
+}
+.topside a {
+	font-size: 25px;
+  color: #D2691E;
+}
+.topside a:hover {
+  color: #000000;
+}
+.text{
+	color: black;
+	top: 100px;
+	position: relative;
+}
+.head{
 color: #818181;
+top: 20px;
+position: relative;
 }
 </style>
 <body class="bg">
-	<center><h2 class="headcolor">About Us</h2></center>
- <center><p class="textcolor">Welcome to AudyBuddy - One Stop for Auditorium Booking<br>Aren't you tired of booking Auditoriums manually? Now you can do it easily with the help of AudyBuddy.</p></center>
+	<div class="topside">
+	<a href="index.html">Home</a>&nbsp; &nbsp;
+	<a href="about.html">About</a>&nbsp; &nbsp;
+  <a href="userlogin.html">Login</a>&nbsp; &nbsp;
+  <a href="contact.html">Contact</a>&nbsp; &nbsp;
+</div>
+	<center><b class="head"><font size="20">About Us</font></b></center>
+ <center><p class="text">Welcome to AudyBuddy - One Stop for Auditorium Booking<br>Aren't you tired of booking Auditoriums manually? Now you can do it easily with the help of AudyBuddy.</p></center>
 </body>
 </html>

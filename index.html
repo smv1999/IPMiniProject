@@ -1,34 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+	    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>AudyBuddy.com</title>
 </head>
 <style type="text/css">
-	.sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 220px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 30px;
-}
 
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #D2691E;
-  display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
+  .container {
+      padding: 16px;
+      bottom: 0;
+    }
 /* Style page content */
 .main {
   margin-left: 160px; /* Same as the width of the sidebar */
@@ -37,14 +18,13 @@
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+
   .topside{padding-top: 15px;}
 }
 .topside
 {
   padding-top: 30px;
-  right: 170px;
+  right: 70px;
   position: fixed;
   top: 30px;
 }
@@ -53,15 +33,18 @@
   color: #D2691E;
 }
 .topside a:hover {
-  color: #FFFFFF;
+  color: #000000;
 }
 .middle
 {
-	top:190px;
+	top:30px;
 	font-size: 30px;
-	color: #FFFFFF;
-	position: fixed;
-	left: 470px;
+	z-index: 1;
+	position: relative;
+}
+.left{
+	left: 100px;
+	padding: 10px;
 }
 .footer {
   position: fixed;
@@ -73,20 +56,21 @@
   text-align: center;
 }
 </style>
-<body background="background.jpg">
-   <div class="sidenav">
-  <img src="audy.png" alt="AudyBuddy" height="70" width="70">
-  <a href="index.html">AudyBuddy.com</a><br><br>
-</div>
+<body>
+<img class="left" src="audy.png" alt="AudyBuddy.com" width="70" height="70">
 <div class="topside">
-	<br>
-	<a href="about.html">About</a><br><br>
-  <a href="userlogin.html">Login</a><br><br>
-  <a href="contact.html">Contact</a><br><br>
+	<a href="about.html">About</a>&nbsp; &nbsp;
+  <a href="userlogin.html">Login</a>&nbsp; &nbsp;
+  <a href="contact.html">Contact</a>&nbsp; &nbsp;
 </div>
-<div class="middle">
-	<p><font color="#D2691E">WELCOME <br> &nbsp; &nbsp; &nbsp; &nbsp;TO <br> AudyBuddy</font></p>
-</div>
+
+	<center><p class="middle"><font size="25" color="#D2691E">WELCOME <br> &nbsp;TO <br> AUDYBUDDY</font></p></center>
+	<div class="container">
+    <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="second.jpg" target="_blank"><img src="second.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="third.jpg" target="_blank"><img src="third.jpg" height="230" width="350"></a></marquee>
+    </div>
+
 <div class="footer">
     <center>&copy; 2019 AudyBuddy.All Rights Reserved.</center>
 </div>

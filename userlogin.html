@@ -204,7 +204,7 @@ canvas{ display: block;}
     </div>
     
 
-  <form class="modal-content animate" action="home.html" id="id01" method="post">
+  <form class="modal-content animate" id="id01" method="post">
     <div class="imgcontainer">
       <center><img src="userimage.png" alt="Avatar" class="avatar"></center>
      <b>User Login</b>
@@ -217,7 +217,7 @@ canvas{ display: block;}
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
 
-      <button type="submit">Login</button>
+      <button type="submit" onclick="validate()">Login</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me <br>
        <center><span ><a href="usersignup.html">Don't have an Account? Sign up.</a></span></center>
@@ -237,6 +237,10 @@ canvas{ display: block;}
 <script>
 function cancel() {
   window.open("index.html","_self");
+}
+function validate() {
+  // body...
+  window.open("home.html");
 }
 
 particlesJS("particles-js", {

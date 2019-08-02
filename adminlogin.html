@@ -18,7 +18,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background-color: #33A5FF;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -73,48 +73,33 @@ span.psw {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   padding-top: 60px;
 }
-.sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 220px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #323840; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 30px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #D2691E;
-  display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Style page content */
-.main {
-  margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
-}
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+  .topside{padding-top: 15px;}
+
 }
 
 .bg{
   background: #FFFFFF;
 
  }
+.topside
+{
+  padding-top: 30px;
+  right: 70px;
+  position: fixed;
+  top: 30px;
+}
+.topside a {
+  font-size: 25px;
+  color: #D2691E;
+}
+.topside a:hover {
+  color: #000000;
+}
 
 /* Modal Content/Box */
 .modal-content {
@@ -177,16 +162,16 @@ canvas{ display: block; }
 .buttonc {border-radius: 60%;}
 </style>
   </head>
-  <body class="bg">
+  <body>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-      <div class="sidenav">
-  <center><img src="adminimage.png" alt="AudyBuddy" height="70" width="70"></center>
-  <a href="index.html">AudyBuddy.com</a><br><br>
-  <a href="about.html">About</a>
-  <a href="userlogin.html">Login</a>
-  <a href="contact.html">Contact</a>
+<div id="particles-js">
+    <img class="left" src="audy.png" alt="AudyBuddy.com" width="70" height="70">
+      <div class="topside">
+  <a href="about.html">About</a>&nbsp; &nbsp;
+  <a href="userlogin.html">Login</a>&nbsp; &nbsp;
+  <a href="gallery.html">Gallery</a>&nbsp; &nbsp;
+  <a href="contact.html">Contact</a>&nbsp; &nbsp;
 </div>
-    <div id="particles-js">
       <div class="container">
       <marquee><font color="black" size="5">Welcome to AudyBuddy</font></marquee>
     </div>

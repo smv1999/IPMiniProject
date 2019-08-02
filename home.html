@@ -45,7 +45,7 @@
     }
 
     button {
-      background-color: #4CAF50;
+      background-color: #33A5FF;
       color: white;
       padding: 14px 20px;
       margin: 8px 0;
@@ -77,7 +77,7 @@
    position:absolute;
    top:0;
    right:0;
-   background-color: #4CAF50;
+   background-color: #33A5FF;
    color: white;
    padding: 14px 20px;
    margin: 8px 0;
@@ -156,45 +156,26 @@ cursor: pointer;
   left: 16px;
 }
 
-
-.sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 220px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #323840; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
+.topside
+{
   padding-top: 30px;
+  right: 30px;
+  position: fixed;
+  top: 30px;
 }
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
+.topside a {
   font-size: 25px;
   color: #D2691E;
-  display: block;
 }
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Style page content */
-.main {
-  margin-left: 160px; /* Same as the width of the sidebar */
-  padding: 0px 10px;
+.topside a:hover {
+  color: #000000;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+    .topside{padding-top: 15px;}
 
+}
 /* Position text in the bottom-left corner */
 .bottomleft {
   position: absolute;
@@ -226,7 +207,7 @@ hr {
 }
 
 .select-selected {
-  background-color: #4CAF50;
+  background-color: #33A5FF;
 }
 
 /* Style the arrow inside the select element: */
@@ -259,7 +240,7 @@ hr {
 /* Style items (options): */
 .select-items {
   position: absolute;
-  background-color: #4CAF50;
+  background-color: #33A5FF;
   top: 100%;
   left: 0;
   right: 0;
@@ -332,14 +313,14 @@ canvas{ display: block; }
   </head>
   <body class="bg">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <div class="sidenav">
-  <img src="audy.png" alt="AudyBuddy" height="70" width="70">
-  <a href="home.html">AudyBuddy.com</a><br><br>
-  <a href="about.html">About</a>
-  <a href="userlogin.html">Login</a>
-  <a href="contact.html">Contact</a>
-</div>
     <div id="particles-js">
+      <img class="left" src="audy.png" alt="AudyBuddy.com" width="70" height="70">
+      <div class="topside">
+  <a href="about.html">About</a>&nbsp; &nbsp;
+  <a href="userlogin.html">Login</a>&nbsp; &nbsp;
+  <a href="gallery.html">Gallery</a>&nbsp; &nbsp;
+  <a href="contact.html">Contact</a>&nbsp; &nbsp;
+</div>
       <div class="container">
       <marquee><font color="black" size="5">Welcome to AudyBuddy</font></marquee>
     </div>
@@ -484,9 +465,9 @@ canvas{ display: block; }
 
     </div>
     <div class="container bg">
-    <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="330" width="400"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <a href="second.jpg" target="_blank"><img src="second.jpg" height="330" width="400"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <a href="third.jpg" target="_blank"><img src="third.jpg" height="330" width="400"></a></marquee>
+    <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="second.jpg" target="_blank"><img src="second.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a href="third.jpg" target="_blank"><img src="third.jpg" height="230" width="350"></a></marquee>
     </div>
     <input type="button" class="botcorner buttonc" value="AudyBuddy" onclick="document.getElementById('id02').style.display='block'">
     <center>&copy; 2019 AudyBuddy.All Rights Reserved.</center>

@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<title>AudyBuddy.com</title>
 </head>
 <style type="text/css">
@@ -34,17 +39,34 @@
 }
 .head{
 color: #818181;
-top: 20px;
+top: 50px;
 position: relative;
 }
 </style>
 <body class="bg">
-	<div class="topside">
-	<a href="index.html">Home</a>&nbsp; &nbsp;
-	<a href="about.html">About</a>&nbsp; &nbsp;
-  <a href="userlogin.html">Login</a>&nbsp; &nbsp;
-  <a href="contact.html">Contact</a>&nbsp; &nbsp;
-</div>
+
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="userlogin.html">LOGIN</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+
+          </ul>
+        </div>
+        </div>
+      </nav>
 	<center><b class="head"><font size="20">About Us</font></b></center>
  <center><p class="text">Welcome to AudyBuddy - One Stop for Auditorium Booking<br>Aren't you tired of booking Auditoriums manually? Now you can do it easily with the help of AudyBuddy.</p></center>
 </body>

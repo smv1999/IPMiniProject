@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auditorium Management System</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <title>Auditorium Management System</title>
     <style>
     body {font-family: Arial, Helvetica, sans-serif;}
-    .container {
+    .containers {
       padding: 16px;
     }
     .modal {
@@ -75,7 +79,7 @@
     }
     .topcorner{
    position:absolute;
-   top:0;
+   top:50px;
    right:0;
    background-color: #33A5FF;
    color: white;
@@ -99,7 +103,7 @@
  position:relative;
  bottom:0;
  right:0;
- background-color: #4CAF50;
+ background-color: #33A5FF;
  color: white;
  padding: 20px 16px;
  margin: 8px 0;
@@ -156,26 +160,6 @@ cursor: pointer;
   left: 16px;
 }
 
-.topside
-{
-  padding-top: 30px;
-  right: 30px;
-  position: fixed;
-  top: 30px;
-}
-.topside a {
-  font-size: 25px;
-  color: #D2691E;
-}
-.topside a:hover {
-  color: #000000;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .topside{padding-top: 15px;}
-
-}
 /* Position text in the bottom-left corner */
 .bottomleft {
   position: absolute;
@@ -271,6 +255,8 @@ hr {
   left: 50%; /* Center the snackbar */
   bottom: 30px; /* 30px from the bottom */
 }
+table {border-collapse: collapse;}
+td    {padding: 6px;}
 
 /* Show the snackbar when clicking on a button (class added with JavaScript) */
 #snackbar.show {
@@ -314,21 +300,36 @@ canvas{ display: block; }
   <body class="bg">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <div id="particles-js">
-      <img class="left" src="audy.png" alt="AudyBuddy.com" width="70" height="70">
-      <div class="topside">
-  <a href="about.html">About</a>&nbsp; &nbsp;
-  <a href="userlogin.html">Login</a>&nbsp; &nbsp;
-  <a href="gallery.html">Gallery</a>&nbsp; &nbsp;
-  <a href="contact.html">Contact</a>&nbsp; &nbsp;
-</div>
-      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>                        
+                    </button>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+    
+              </ul>
+            </div>
+            </div>
+          </nav>
+<br><br><br>
+
+      <div class="containers">
       <marquee><font color="black" size="5">Welcome to AudyBuddy</font></marquee>
     </div>
       <input type="button" class="topcorner" value="Logout" onclick="logout()">
       <!-- <label name="websitename" class="leftcorner" onclick="home()" style = "font-family:georgia,garamond,serif;font-size:16px;font-style:bold;">AudyBuddy</label> -->
 
        <br><br>
-       <center><table border="2" cellpadding="10" cellspacing="8">
+       <center><table border="2">
           <tr>
             <td><font color="black" >Auditorium Name</font></td>
             <td><font color="black" >Address</font></td>
@@ -368,7 +369,7 @@ canvas{ display: block; }
         <p>New Auditorium At Saidapet</p>
   </div>
   <div class="middle">
-        <h1>COMING SOON</h1>
+        <h1>COMING SOON</h1><br>
             <hr>
        <p id="demo"></p>
   </div>
@@ -382,7 +383,7 @@ canvas{ display: block; }
          <b>Booking System</b>
         </div>  
 
-      <div class="container">
+      <div class="containers">
       Auditorium Name <br><div class="custom-select" style="width:100%;">
 <select name="Auditorium Name" id="audname">
         <option value="Festfire">Festfire</option>
@@ -405,7 +406,7 @@ canvas{ display: block; }
 
       <div class="modal" id="id01">
         <form class="modal-content animate">
-          <div class="container">
+          <div class="containers">
       <b>Auditorium Status</b><br><br>
       <label >Availability:</label>
       <label name="availability">Yes</label><br><br>
@@ -421,7 +422,7 @@ canvas{ display: block; }
       <!-- div 2 -->
       <div class="modal" id="id02">
         <form class="modal-content animate  botcorner2">
-          <div class="container">
+          <div class="containers">
       <b>Hello Sir/Madam! How may I be of your help?</b>
       <input type="text" placeholder="Type Message..." id="userchat">
       <button type="button" onclick="chat()">OK</button>
@@ -432,7 +433,7 @@ canvas{ display: block; }
       <!-- div 3 -->
       <div class="modal" id="id03"> 
         <form class="modal-content animate">
-          <div class="container">
+          <div class="containers">
             <b>Auditorium Booking Request</b><br><br><br>
             Total Amount ₹
             <b id="finalcost"></b><br>
@@ -464,7 +465,7 @@ canvas{ display: block; }
       </div>
 
     </div>
-    <div class="container bg">
+    <div class="containers bg">
     <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <a href="second.jpg" target="_blank"><img src="second.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <a href="third.jpg" target="_blank"><img src="third.jpg" height="230" width="350"></a></marquee>

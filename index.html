@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>AudyBuddy.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>	
+<title>AudyBuddy.com</title>
 </head>
 <style type="text/css">
 
@@ -16,28 +20,9 @@
   padding: 0px 10px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-
-  .topside{padding-top: 15px;}
-}
-.topside
-{
-  padding-top: 30px;
-  right: 70px;
-  position: fixed;
-  top: 30px;
-}
-.topside a {
-	font-size: 25px;
-  color: #D2691E;
-}
-.topside a:hover {
-  color: #000000;
-}
 .middle
 {
-	top:30px;
+	top:60px;
 	font-size: 30px;
 	z-index: 1;
 	position: relative;
@@ -57,15 +42,34 @@
 }
 </style>
 <body>
-<img class="left" src="audy.png" alt="AudyBuddy.com" width="70" height="70">
-<div class="topside">
-	<a href="about.html">About</a>&nbsp; &nbsp;
-  <a href="userlogin.html">Login</a>&nbsp; &nbsp;
-  <a href="gallery.html">Gallery</a>&nbsp; &nbsp;
-  <a href="contact.html">Contact</a>&nbsp; &nbsp;
-</div>
 
-	<center><p class="middle"><font size="25" color="#D2691E">WELCOME <br> &nbsp;TO <br> AUDYBUDDY</font></p></center>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+            <a class="navbar-brand" href="index.html">AudyBuddy</a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#index">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="userlogin.html">LOGIN</a></li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+
+          </ul>
+        </div>
+        </div>
+      </nav>
+
+
+  <center><p class="middle"><font size="25" color="#D2691E">WELCOME <br> &nbsp;TO <br> AUDYBUDDY</font></p></center>
+  <br><br>
 	<div class="container">
     <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <a href="second.jpg" target="_blank"><img src="second.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

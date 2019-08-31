@@ -125,7 +125,7 @@ cursor: pointer;
 .column {
   float: left;
   width: 30%;
-  padding: 30px;
+  padding: 20px;
 }
 
 /* Clear floats after the columns */
@@ -377,7 +377,7 @@ canvas{ display: block; }
 <br><br><br>
 
 <div id="mainc">
-      <form class="modal-content animate" name="homeform" method="post" >
+      <form class="modal-content animate" name="homeform" method="post" action="home.php" >
         <div class="imgcontainer">
           <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
          <b>Booking System</b>
@@ -385,7 +385,7 @@ canvas{ display: block; }
 
       <div class="containers">
       Auditorium Name <br><div class="custom-select" style="width:100%;">
-<select name="Auditorium Name" id="audname">
+<select name="aname" id="audname">
         <option value="Festfire">Festfire</option>
         <option value="Festfreeze">Festfreeze</option>
         <option value="Festgrand">Festgrand</option>
@@ -393,9 +393,33 @@ canvas{ display: block; }
 
       </select></div><br>
       <!-- <input type="text" placeholder="Auditorium Name" id="audname" > -->
-      Event Name <input type="text" placeholder="Event Name" id="evtname" >
-      Date <input type="date" id="dateofevt" >
-      <button type="button" onclick="validate()">Continue</button>
+      Event Name <input type="text" placeholder="Event Name" name="ename" id="evtname" required>
+      Date <input type="date" name="dateoff" id="dateofevt" required>
+      <b>Auditorium Booking Request</b><br><br><br>
+            <!-- <b id="finalcost"></b><br> -->
+            Select Time Slot
+            <div class="row">
+  <div class="column" style="background-color:#FFFFFF;">
+    <button type="button" id="firstslot" >9:00 AM - 12:00 PM</button>
+  </div>
+  <div class="column" style="background-color:#FFFFFF;">
+    <button type="button" id="secondslot">12:30 PM - 03:30 PM</button>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="column" style="background-color:#FFFFFF;">
+    <button type="button" id="thirdslot">4:00 PM - 07:00 PM</button>
+
+  </div>
+  <div class="column" style="background-color:#FFFFFF;">
+    <button type="button" id="fourthslot">7:30 PM - 10:30 PM</button>
+
+  </div>
+</div>
+        <input type="text" name="timing" placeholder="Enter Selected Timing" required>  
+      <button type="submit" onclick="validate()">Continue</button>
 
       </div>
       </form>
@@ -430,40 +454,7 @@ canvas{ display: block; }
       </div>
       </form>
       </div>
-      <!-- div 3 -->
-      <div class="modal" id="id03"> 
-        <form class="modal-content animate">
-          <div class="containers">
-            <b>Auditorium Booking Request</b><br><br><br>
-            Total Amount ₹
-            <b id="finalcost"></b><br>
-            Select Time Slot
-            <div class="row">
-  <div class="column" style="background-color:#FFFFFF;">
-    <button type="button" id="firstslot" onclick="setColor('firstslot')">9:00 AM - 12:00 PM</button>
-  </div>
-  <div class="column" style="background-color:#FFFFFF;">
-    <button type="button" id="secondslot" onclick="setColor('secondslot')">12:30 PM - 03:30 PM</button>
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#FFFFFF;">
-    <button type="button" id="thirdslot" onclick="setColor('thirdslot')">4:00 PM - 07:00 PM</button>
-
-  </div>
-  <div class="column" style="background-color:#FFFFFF;">
-    <button type="button" id="fourthslot" onclick="setColor('fourthslot')">7:30 PM - 10:30 PM</button>
-
-  </div>
-</div>
-            <button type="button" onclick="confirm()">Confirm</button>
-
-          </div>
-        </form>
-      </div>
-
+     
     </div>
     <div class="containers bg">
     <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -591,19 +582,6 @@ function chat() {
   }
 }
 
-var count = 1;
-    function setColor(btn) {
-        var property = document.getElementById(btn);
-        if (count == 0) {
-            property.style.backgroundColor = "#4CAF50"
-            count = 1;        
-        }
-        else {
-            property.style.backgroundColor = "#7FFF00"
-            count = 0;
-        }
-    }
-
   function confirm()
   {
     var x = document.getElementById("snackbar");
@@ -614,14 +592,12 @@ var count = 1;
   // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
     // window.open("home.html","_self");
-    document.getElementById('id03').style.display='none';
     
 
   }
   function check() {
     document.getElementById('id01').style.display='none';
     document.getElementById('id02').style.display='none';
-    document.getElementById('id03').style.display='block';
 
 
 
@@ -630,6 +606,7 @@ function logout() {
   window.open("userlogin.html","_self");
 }
 function validate() {
+  
   var evt = document.getElementById("evtname").value;
   var date = document.getElementById("dateofevt").value;
   var today = new Date();
@@ -662,9 +639,8 @@ console.log(typeof newdate);
     return false;
   }
   else {
-    
+      confirm();
       getSelectedOption();
-      document.getElementById('id03').style.display='block';
       return true;
     
   }

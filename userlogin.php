@@ -17,5 +17,6 @@ if ($rows == 1) {
 header("location: home.html"); 
 } else {
 $error = "Username or Password is invalid";
+echo "<script type='text/javascript'>alert('$error');</script>";
 }
 ?>

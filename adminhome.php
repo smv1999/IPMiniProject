@@ -17,10 +17,22 @@ $sql="INSERT INTO adminhome(audname,addr,seat,price) values ('$aud','$add','$sea
 $result=mysqli_query($conn,$sql);
 error_reporting(E_ALL ^ E_WARNING); 
 if($result)
-{
-header("Location:userlogin.html");
-echo "<script type='text/javascript'>alert('Successfully Inserted!');</script>";
+{   echo "<script type='text/javascript'>alert('Successfully Inserted!');</script>";
+    $query = "select username,email from signup;";
+    $queryResult = $conn->query($query);
+    echo "<center><table cellspacing='10' cellpadding='10'>";
+    while ($queryRow = $queryResult->fetch_row()) {
+        echo "<tr>";
+        for($i = 0; $i < $queryResult->field_count; $i++){
+            echo "<td>$queryRow[$i]</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table></center>";
+    $conn->close();
 }
 else
- echo "Error: " . $sql . "<br>" . mysqli_error($conn)
+ echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+
+
 ?>

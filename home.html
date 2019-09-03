@@ -47,7 +47,13 @@
       border: 1px solid #888;
       width: 30%; /* Could be more or less, depending on screen size */
     }
-
+    .container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width: 450px;
+}
     button {
       background-color: #33A5FF;
       color: white;
@@ -299,8 +305,6 @@ canvas{ display: block; }
   </head>
   <body class="bg">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <div id="particles-js">
-
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
               <div class="navbar-header">
@@ -377,7 +381,7 @@ canvas{ display: block; }
 <br><br><br>
 
 <div id="mainc">
-      <form class="modal-content animate" name="homeform" method="post" action="home.php" >
+      <form class="modal-content animate container" name="homeform" method="post" action="home.php" >
         <div class="imgcontainer">
           <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
          <b>Booking System</b>
@@ -455,7 +459,6 @@ canvas{ display: block; }
       </form>
       </div>
      
-    </div>
     <div class="containers bg">
     <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <a href="second.jpg" target="_blank"><img src="second.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;

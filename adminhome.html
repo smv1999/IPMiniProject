@@ -13,7 +13,7 @@
       border: 1px solid #ccc;
       box-sizing: border-box;
     }
-    input[type=button], input[type=reset]{
+    input[type=submit], input[type=reset]{
       background-color: #33A5FF;
       color: white;
       padding: 14px 20px;
@@ -38,7 +38,7 @@
   background-color: #fefefe;
   margin: 5% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 30%; /* Could be more or less, depending on screen size */
+/* Could be more or less, depending on screen size */
 }
 .animate {
   -webkit-animation: animatezoom 0.6s;
@@ -54,8 +54,12 @@
   from {transform: scale(0)}
   to {transform: scale(1)}
 }
-.container{
-	padding: 16px;
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width: 400px;
 }
   .topcorner{
    position:fixed;
@@ -70,16 +74,17 @@
   }
 </style>
 <body>
-	 <input type="button" class="topcorner" value="Logout" onclick="logout()">
-<form method="post" class="modal-content animate">
-	<div class="container">
+   <input type="button" class="topcorner" value="Logout" onclick="logout()">
+   <br><br><br>
+<form method="post" class="modal-content animate container" action="adminhome.php">
+  <h3>Auditorium Details</h3>
 	Auditorium Name<input type="text" name="audname">
 	Address<input type="text" name="address">
 	Seats<input type="text" name="seats">
 	Price<input type="text" name="price">
-	<center><input type="button" name="add" value="Add">&nbsp; &nbsp; &nbsp; &nbsp;
+	<center><input type="submit" name="add" value="Add">&nbsp; &nbsp; &nbsp; &nbsp;
 	<input type="reset" name="reset"></center>
-	</div>
+
 </form>
 </body>
 <script type="text/javascript">

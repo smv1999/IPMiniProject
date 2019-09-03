@@ -79,23 +79,26 @@ span.psw {
   padding-top: 60px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-
-}
 
 .bg{
   background: #FFFFFF;
 
  }
+
+ .container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width: 400px;
+}
+
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 35%; /* Could be more or less, depending on screen size */
+  /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -120,26 +123,7 @@ span.psw {
   animation: animatezoom 0.6s
 }
 
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
 
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
 
 canvas{ display: block; }
 /* ---- particles.js container ---- */
@@ -151,35 +135,28 @@ canvas{ display: block; }
 .buttonc {border-radius: 60%;}
 </style>
   <body>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<div id="particles-js">
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>                        
-                </button>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-            <li><a href="userlogin.html">LOGIN</a></li>
-            <li><a href="gallery.html">GALLERY</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
-
-          </ul>
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>                        
+              </button>
         </div>
-        </div>
-      </nav>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="userlogin.html">LOGIN</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
 
-
-      <div class="container">
-      <marquee><font color="black" size="5">Welcome to AudyBuddy</font></marquee>
-    </div>
-  <form class="modal-content animate" action="adminhome.html" id="id01" onsubmit="return checklogin()" name="admin">
+        </ul>
+      </div>
+      </div>
+    </nav>
+  <form class="modal-content animate container" action="adminlogin.php" id="id01" method="POST" name="admin">
     <div class="imgcontainer">
       <center><img src="adminimage.png" alt="Avatar" class="avatar"></center>
      <b>Admin Login</b>
@@ -204,26 +181,12 @@ canvas{ display: block; }
       <span class="psw">Go to <a href="userlogin.html">User Login</a></span>
     </div>
   </form>
-</div>
 <center>&copy; 2019 AudyBuddy.All Rights Reserved.</center>
 </body>
 <script>
 function cancel() {
   window.open("index.html","_self");
 }
-function checklogin() {
-  var name = document.admin.uname.value;
-  var pwd = document.admin.psw.value;
-  if(name!="admin" && pwd!="admin@123")
-  {
-    alert("Can't login as Admin!");
-    return false;
-  }
-  else{
-    return true;
-  }
-}
-
 particlesJS("particles-js", {
   "particles": {
     "number": {

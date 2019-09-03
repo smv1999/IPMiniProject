@@ -30,7 +30,13 @@ button {
   cursor: pointer;
   width: 100%;
 }
-
+.container {
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  width: 400px;
+}
 button:hover {
   opacity: 0.8;
 }
@@ -109,7 +115,7 @@ span.psw {
   background-color: #fefefe;
   margin: 5% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
+  /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */
@@ -204,7 +210,7 @@ canvas{ display: block; }
       <div class="containers">
       <marquee><font color="black" size="5">Welcome to AudyBuddy</font></marquee>
     </div>
-    <form class="modal-content animate" id="id01" method="POST" action="usersignup.php" name="signup">
+    <form class="modal-content animate container" id="id01" method="POST" action="usersignup.php" name="signup">
       
       <div class="imgcontainer">
         <center><img src="userimage.png" alt="Avatar" class="avatar"></center>

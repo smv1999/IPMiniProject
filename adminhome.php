@@ -20,7 +20,7 @@ if($result)
 {   echo "<script type='text/javascript'>alert('Successfully Inserted!');</script>";
     $query = "select username,email from signup;";
     $queryResult = $conn->query($query);
-    echo "<center><table cellspacing='10' cellpadding='10'>";
+    echo "<center><table border='2' cellspacing='10' cellpadding='10'>";
     while ($queryRow = $queryResult->fetch_row()) {
         echo "<tr>";
         for($i = 0; $i < $queryResult->field_count; $i++){

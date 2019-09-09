@@ -14,7 +14,7 @@ if (!$conn) {
 $query = mysqli_query($conn,"SELECT * FROM adminlogin WHERE passwd='$pswd' AND username='$user'");
 $rows = mysqli_num_rows($query);
 if ($rows == 1) {
-header("location: adminhome.html"); 
+header("location: admindashboard.html"); 
 } else {
 $error = "Username or Password is invalid";
 echo "<script type='text/javascript'>alert('$error');</script>";

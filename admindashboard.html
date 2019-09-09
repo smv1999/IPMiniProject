@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>	
+    <title>Dashboard</title>
+</head>
+<style>
+    button {
+  background-color: #33A5FF;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.topcorner{
+   position:fixed;
+   top:0;
+   right:0;
+   background-color: #33A5FF;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+  }
+</style>
+<body>
+    <input type="button" class="topcorner" value="Logout" onclick="logout()">
+    <center><h2>Admin Dashboard</h2></center>
+    <center>
+    <div style="height: 100px; width: 200px;">
+    <button onclick="window.open('adminhome.html','_self')">Edit Details</button>
+    <button onclick="window.open('viewreg.php','_self')">View Registrations</button>
+    </div>
+    </center>
+</body>
+<script type="text/javascript">
+	function logout() {
+  window.open("index.html","_self");
+}
+</script>
+</html>

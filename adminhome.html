@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Admin Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>		<title>Admin Home</title>
 </head>
 <style type="text/css">
 	 input[type=text]{
@@ -61,35 +64,19 @@
   border-radius: 3px;
   width: 400px;
 }
-  .topcorner{
-   position:fixed;
-   top:0;
-   right:0;
-   background-color: #4CAF50;
-   color: white;
-   padding: 14px 20px;
-   margin: 8px 0;
-   border: none;
-   cursor: pointer;
-  }
 </style>
 <body>
-   <input type="button" class="topcorner" value="Logout" onclick="logout()">
    <br><br><br>
+   <div class="container-fluid">
 <form method="post" class="modal-content animate container" action="adminhome.php">
   <h3>Auditorium Details</h3>
-	Auditorium Name<input type="text" name="audname">
-	Address<input type="text" name="address">
-	Seats<input type="text" name="seats">
-	Price<input type="text" name="price">
+	Auditorium Name<input type="text" name="audname" required>
+	Address<input type="text" name="address" required>
+	Seats<input type="text" name="seats" required>
+	Price<input type="text" name="price" required>
 	<center><input type="submit" name="add" value="Add">&nbsp; &nbsp; &nbsp; &nbsp;
 	<input type="reset" name="reset"></center>
-
 </form>
+</div>
 </body>
-<script type="text/javascript">
-	function logout() {
-  window.open("index.html","_self");
-}
-</script>
 </html>

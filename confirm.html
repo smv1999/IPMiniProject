@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>	
+      <script src="//code.jquery.com/jquery.min.js"></script>
+      <script src="lib/year-select.js"></script>
+
     <title>Confirm</title>
 </head>
 <style>
@@ -47,14 +50,27 @@
   width: 400px;
 }
 
-input[type=text] {
+input[type=text],[type=password] {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-
+.drop{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.year{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
 label {
   margin-bottom: 10px;
   display: block;
@@ -97,7 +113,7 @@ span.price {
 </style>
 <body>
     <div class="container">
-    <form action="confirm.php" method="POST" name="confirmform">
+    <form action="confirmbooking.php" method="POST" name="confirmform">
         <h3>Payment</h3>
         <label for="fname">Accepted Cards</label>
         <div class="icon-container">
@@ -109,13 +125,73 @@ span.price {
         <label for="cname">Name on Card</label>
         <input type="text" id="cname" name="cardname" placeholder="John More Doe" required>
         <label for="ccnum">Credit card number</label>
-        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required>
+        <input type="text" id="ccnum" name="cardnumber" class="creditCardText" maxlength="19" placeholder="1111-2222-3333-4444" required>
         <label for="expmonth">Exp Month</label>
-        <input type="text" id="expmonth" name="expmonth" placeholder="September" required>
+        <!-- <input type="d" id="expmonth" name="expmonth" placeholder="September" required> -->
+        <select name="expmonth" id="expmonth" required class="drop">
+            <option>- Month -</option>
+            <option value="January">January</option>
+            <option value="Febuary">Febuary</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+            </select>
         <div class="row">
           <div class="col-50">
             <label for="expyear">Exp Year</label>
-            <input type="text" id="expyear" name="expyear" placeholder="2018" required>
+            <!-- <input type="text" id="expyear" name="expyear" placeholder="2018" required> -->
+            <select class="yearselect year" id="expyear" name="expyear" required>
+                <option>- Year -</option>
+                <option value='2019'>2019</option>
+                <option value='2020'>2020</option>
+                <option value='2021'>2021</option>
+                <option value='2022'>2022</option>
+                <option value='2023'>2023</option>
+                <option value='2024'>2024</option>
+                <option value='2025'>2025</option>
+                <option value='2026'>2026</option>
+                <option value='2027'>2027</option>
+                <option value='2028'>2028</option>
+                <option value='2029'>2029</option>
+                <option value='2030'>2030</option>
+                <option value='2031'>2031</option>
+                <option value='2032'>2032</option>
+                <option value='2033'>2033</option>
+                <option value='2034'>2034</option>
+                <option value='2035'>2035</option>
+                <option value='2036'>2036</option>
+                <option value='2037'>2037</option>
+                <option value='2038'>2038</option>
+                <option value='2039'>2039</option>
+                <option value='2040'>2040</option>
+                <option value='2041'>2041</option>
+                <option value='2042'>2042</option>
+                <option value='2043'>2043</option>
+                <option value='2044'>2044</option>
+                <option value='2045'>2045</option>
+                <option value='2046'>2046</option>
+                <option value='2047'>2047</option>
+                <option value='2048'>2048</option>
+                <option value='2049'>2049</option>
+                <option value='2050'>2050</option>
+                <option value='2051'>2051</option>
+                <option value='2052'>2052</option>
+                <option value='2053'>2053</option>
+                <option value='2054'>2054</option>
+                <option value='2055'>2055</option>
+                <option value='2056'>2056</option>
+                <option value='2057'>2057</option>
+                <option value='2058'>2058</option>
+                <option value='2059'>2059</option>
+                <option value='2060'>2060</option>
+            </select>
           </div>
           <div class="col-50">
             <label for="cvv">CVV</label>
@@ -127,4 +203,14 @@ span.price {
     </form>
 </div>
 </body>
+<script>
+  $('.creditCardText').keyup(function() {
+  var foo = $(this).val().split("-").join(""); // remove hyphens
+  if (foo.length > 0) {
+    foo = foo.match(new RegExp('.{1,4}', 'g')).join("-");
+  }
+  $(this).val(foo);
+});
+
+</script>
 </html>

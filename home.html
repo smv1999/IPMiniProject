@@ -3,9 +3,33 @@
   <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="user_css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="user_css/component.css" />
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
         <title>Auditorium Management System</title>
     <style>
     body {font-family: Arial, Helvetica, sans-serif;}
@@ -54,19 +78,7 @@
   border-radius: 3px;
   width: 450px;
 }
-    button {
-      background-color: #33A5FF;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
 
-    button:hover {
-      opacity: 0.8;
-    }
     .imgcontainer {
       text-align: center;
       margin: 24px 0 12px 0;
@@ -85,7 +97,7 @@
     }
     .topcorner{
    position:absolute;
-   top:50px;
+   top:90px;
    right:0;
    background-color: #33A5FF;
    color: white;
@@ -173,14 +185,6 @@ cursor: pointer;
   left: 16px;
 }
 
-/* Position text in the middle */
-.middle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
  .bg{
   background: #FFFFFF;
 
@@ -191,62 +195,7 @@ hr {
   margin: auto;
   width: 40%;
 }
-.custom-select {
-  position: relative;
-  font-family: Arial;
-}
 
-.select-selected {
-  background-color: #33A5FF;
-}
-
-/* Style the arrow inside the select element: */
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-/* Point the arrow upwards when the select box is open (active): */
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-/* style the items (options), including the selected item: */
-.select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-}
-
-/* Style items (options): */
-.select-items {
-  position: absolute;
-  background-color: #33A5FF;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-.custom-select select {
-  display: none; /*hide original SELECT element:*/
-}
-/* Hide the items when the select box is closed: */
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
 #snackbar {
   visibility: hidden; /* Hidden by default. Visible on click */
   min-width: 250px; /* Set a default minimum width */
@@ -293,44 +242,20 @@ td    {padding: 6px;}
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 }
-canvas{ display: block; }
-/* ---- particles.js container ---- */
- #particles-js{ position:relative; width: 100%; height: 100%; background-color: #FFFFFF; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; top: 0 }
- /* ---- stats.js ---- */
- .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; }
-.js-count-particles{ font-size: 1.1em; }
- #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
-.buttonc {border-radius: 60%;}
+
     </style>
   </head>
   <body class="bg">
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>                        
-                    </button>
-              </div>
-              <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav">
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="gallery.html">GALLERY</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-    
-              </ul>
-            </div>
-            </div>
-          </nav>
-<br><br><br>
+      <nav class="pages-nav">
+          <div class="pages-nav__item"><a class="link link--page" href="about.html">ABOUT</a></div>
+          <div class="pages-nav__item"><a class="link link--page" href="gallery.html">GALLERY</a></div>
+          <div class="pages-nav__item"><a class="link link--page" href="contact.html">CONTACT</a></div>   
+        </nav>
 
       <div class="containers">
       <marquee><font color="black" size="5">Welcome to AudyBuddy</font></marquee>
     </div>
       <input type="button" class="topcorner" value="Logout" onclick="logout()">
-      <!-- <label name="websitename" class="leftcorner" onclick="home()" style = "font-family:georgia,garamond,serif;font-size:16px;font-style:bold;">AudyBuddy</label> -->
 
        <br><br>
        <center><table border="2">
@@ -365,106 +290,88 @@ canvas{ display: block; }
             <td><font color="#9400D3">250000</font></td>
           </tr>
         </table></center>
-        <br><br><br><br><br>
-        <!-- timer -->
-        <div class="bgimg">
+       
   
-  <div class="middle">
-        <p>New Auditorium At Saidapet</p>
-  </div>
-  <div class="middle">
-        <h1>COMING SOON</h1><br>
-            <hr>
-       <p id="demo"></p>
-  </div>
-</div>
-<br><br><br>
+<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form animate" method="POST" action="home.php">
+					<span class="login100-form-title p-b-49">
+						Booking System
+					</span>
 
-<div id="mainc">
-      <form class="modal-content animate container" name="homeform" method="post" action="home.php" >
-        <div class="imgcontainer">
-          <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
-         <b>Booking System</b>
-        </div>  
+          Auditorium Name <br>
+              <select name="aname" id="audname" style="width: 100%; height: 45px;">
+                      <option value="Festfire">Festfire</option>
+                      <option value="Festfreeze">Festfreeze</option>
+                      <option value="Festgrand">Festgrand</option>
+                      <option value="Festpomp">Festpomp</option>
+              
+                    </select>
 
-      <div class="containers">
-      Auditorium Name <br><div class="custom-select" style="width:100%;">
-<select name="aname" id="audname">
-        <option value="Festfire">Festfire</option>
-        <option value="Festfreeze">Festfreeze</option>
-        <option value="Festgrand">Festgrand</option>
-        <option value="Festpomp">Festpomp</option>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Event name is required">
+						<span class="label-input100">Event Name</span>
+						<input class="input100" type="text" id="evtname" name="ename" placeholder="Type the Event Name">
+					</div>
 
-      </select></div><br>
-      <!-- <input type="text" placeholder="Auditorium Name" id="audname" > -->
-      Event Name <input type="text" placeholder="Event Name" name="ename" id="evtname" required>
-      Date <input type="date" name="dateoff" id="dateofevt" required>
-      <b>Auditorium Booking Request</b><br><br><br>
-            <!-- <b id="finalcost"></b><br> -->
-            Select Time Slot
-            <div class="row">
-  <div class="column" style="background-color:#FFFFFF;">
-    <button type="button" id="firstslot" >9:00 AM - 12:00 PM</button>
-  </div>
-  <div class="column" style="background-color:#FFFFFF;">
-    <button type="button" id="secondslot">12:30 PM - 03:30 PM</button>
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="column" style="background-color:#FFFFFF;">
-    <button type="button" id="thirdslot">4:00 PM - 07:00 PM</button>
-
-  </div>
-  <div class="column" style="background-color:#FFFFFF;">
-    <button type="button" id="fourthslot">7:30 PM - 10:30 PM</button>
-
-  </div>
-</div>
-        <input type="text" name="timing" placeholder="Enter Selected Timing" required>  
-      <button type="submit" onclick="validate()">Continue</button>
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Date</span>
+						<input class="input100" type="date" id="dateofevt" name="dateoff" placeholder="Type your password">
+					</div>
+					
+          <b>Auditorium Booking Request</b><br><br><br>
+          Select Time Slot
+          <div class="row">
+      <div class="column" style="background-color:#FFFFFF;">
+        <button type="button" id="firstslot" >9:00 AM - 12:00 PM</button>
+      </div>
+      <div class="column" style="background-color:#FFFFFF;">
+        <button type="button" id="secondslot">12:30 PM - 03:30 PM</button>
 
       </div>
-      </form>
-</div>
+      </div>
+
+      <div class="row">
+      <div class="column" style="background-color:#FFFFFF;">
+        <button type="button" id="thirdslot">4:00 PM - 07:00 PM</button>
+
+      </div>
+      <div class="column" style="background-color:#FFFFFF;">
+        <button type="button" id="fourthslot">7:30 PM - 10:30 PM</button>
+
+      </div>
+      </div>
+
+      <div class="wrap-input100 validate-input m-b-23" data-validate = "Timing is required">
+          <input class="input100" type="text" name="timing" placeholder="Enter Selected Timing">
+        </div>
+          
+      
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button type="submit" class="login100-form-btn" onclick="return validate()">
+								Continue
+							</button>
+						</div>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
 
 <!-- booking confirmed -->
 <div id="snackbar">Your Booking is Confirmed</div>
 
-      <div class="modal" id="id01">
-        <form class="modal-content animate">
-          <div class="containers">
-      <b>Auditorium Status</b><br><br>
-      <label >Availability:</label>
-      <label name="availability">Yes</label><br><br>
-      <label >Advanced Bookings done :</label>
-      <label name="adv">No</label><br><br>
-      Date till it becomes available :
-      <label name="availdate">N/A</label>
-      <button type="button" onclick="check()">Ok</button>
-      </div>
-      </form>
-      </div>
 
-      <!-- div 2 -->
-      <div class="modal" id="id02">
-        <form class="modal-content animate  botcorner2">
-          <div class="containers">
-      <b>Hello Sir/Madam! How may I be of your help?</b>
-      <input type="text" placeholder="Type Message..." id="userchat">
-      <button type="button" onclick="chat()">OK</button>
-      <button type="button" onclick="document.getElementById('id02').style.display='none'">CLOSE</button>
-      </div>
-      </form>
-      </div>
-     
     <div class="containers bg">
     <marquee onmouseover="this.stop();" onmouseout="this.start();"><a href="first.jpg" target="_blank"><img src="first.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <a href="second.jpg" target="_blank"><img src="second.jpg" height="230" width="350"></a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
     <a href="third.jpg" target="_blank"><img src="third.jpg" height="230" width="350"></a></marquee>
     </div>
-    <input type="button" class="botcorner buttonc" value="AudyBuddy" onclick="document.getElementById('id02').style.display='block'">
     <center>&copy; 2019 AudyBuddy.All Rights Reserved.</center>
   </body>
 
@@ -544,38 +451,6 @@ document.addEventListener("click", closeAllSelect);
 
 
 
-
-
-
-
-  // Set the date we're counting down to
-var countDownDate = new Date("Oct 05, 2019 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get todays date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  // Display the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
-  // If the count down is finished, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
   
 function chat() {
   var chatter = document.getElementById("userchat").value;
@@ -681,128 +556,5 @@ function getSelectedOption() {
 
       }
     }
-
-particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 88,
-      "density": {
-        "enable": true,
-        "value_area": 700
-      }
-    },
-    "color": {
-      "value": ["#aa73ff", "#f8c210", "#83d238", "#33b1f8"]
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 15
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1.5,
-        "opacity_min": 0.15,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 2.5,
-      "random": false,
-      "anim": {
-        "enable": true,
-        "speed": 2,
-        "size_min": 0.15,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 110,
-      "color": "#33b1f8",
-      "opacity": 0.25,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 1.6,
-      "direction": "none",
-      "random": false,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": false,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": false,
-        "mode": "repulse"
-      },
-      "onclick": {
-        "enable": false,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-});
-var count_particles, stats, update;
-stats = new Stats;
-stats.setMode(0);
-stats.domElement.style.position = 'absolute';
-stats.domElement.style.left = '0px';
-stats.domElement.style.top = '0px';
-document.body.appendChild(stats.domElement);
-count_particles = document.querySelector('.js-count-particles');
-update = function() {
-  stats.begin();
-  stats.end();
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  }
-  requestAnimationFrame(update);
-};
-requestAnimationFrame(update);
 </script>
 </html>

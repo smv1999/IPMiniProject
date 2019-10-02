@@ -10,20 +10,11 @@
     <title>Dashboard</title>
 </head>
 <style>
-    button {
-  background-color: #33A5FF;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+
 .topcorner{
    position:fixed;
    top:0;
    right:0;
-   background-color: #33A5FF;
    color: white;
    padding: 14px 20px;
    margin: 8px 0;
@@ -32,12 +23,12 @@
   }
 </style>
 <body>
-    <input type="button" class="topcorner" value="Logout" onclick="logout()">
+    <button class="btn btn-primary topcorner" onclick="logout()">Logout</button>
     <center><h2>Admin Dashboard</h2></center>
     <center>
     <div style="height: 100px; width: 200px;">
-    <button onclick="window.open('adminhome.html','_self')">Edit Details</button>
-    <button onclick="window.open('viewreg.php','_self')">View Registrations</button>
+    <button class="btn btn-primary" onclick="window.open('admineditdetails.html','_self')">Edit Details</button><br><br>
+    <button class="btn btn-primary" onclick="window.open('viewreg.php','_self')">View Registrations</button>
     </div>
     </center>
 </body>

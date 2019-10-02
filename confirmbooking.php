@@ -25,7 +25,11 @@
 </style>
 <body>
 <?php
-$to = "vaidhyanathansm99@gmail.com";
+if(!isset($_COOKIE[$mailid])) {
+    echo "Cookie named '" . $mailid . "' is not set!";
+}
+$finalmail = $_COOKIE[$mailid];
+$to = $finalmail;
 $subject = "Your Booking has been Confirmed.";
 $txt = "Hello world!";
 $headers = "From: vaidhyanathan.sm@gmail.com" . "\r\n" ;

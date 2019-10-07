@@ -41,7 +41,7 @@ your registered E-mail address.<br><p>check the spam folder if not in inbox.</p>
 ?>
 <center>
     <div class='container-fluid' width=50% height=50%>
-        <button class='btns' onclick='window.open("home.html","_self")'>Go Back to Home Page</button>
+        <button class='btns' onclick='window.open("mainhome.php","_self")'>Go Back to Home Page</button>
     </div>
 </center>
 

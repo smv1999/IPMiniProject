@@ -254,9 +254,18 @@ td    {padding: 6px;}
       <div class="containers">
       <marquee><font color="black" size="5">Welcome to AudyBuddy</font></marquee>
     </div>
-      <input type="button" class="topcorner" value="Logout" onclick="logout()">
-
+    <form action="logout.php" method="POST">
+      <input type="submit" class="topcorner" value="Logout">
+    </form>
        <br><br>
+
+       <?php
+        session_start();
+        if($_SESSION['username'])
+        {
+          echo "<center>Hi " . $_SESSION["username"] . ".</center><br>";
+        }
+       ?>
        <center><table border="2">
           <tr>
             <td><font color="black" >Auditorium Name</font></td>

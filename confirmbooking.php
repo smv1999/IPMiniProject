@@ -25,23 +25,47 @@
 </style>
 <body>
 <?php
-if(!isset($_COOKIE[$mailid])) {
-    echo "Cookie named '" . $mailid . "' is not set!";
+$servername = "localhost";
+$username = "id10582486_smv1999";
+$password = "vaidhya@123";
+$dbname=    "id10582486_users";
+$cname = $_POST['cardname'];
+$cnumber = $_POST['cardnumber'];
+$expmonth = $_POST['expmonth'];
+$expyear = $_POST['expyear'];
+$cvv = $_POST['cvv'];
+
+$conn = mysqli_connect($servername, $username, $password,$dbname);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-$finalmail = $_COOKIE[$mailid];
-$to = $finalmail;
-$subject = "Your Booking has been Confirmed.";
-$txt = "Hello world!";
-$headers = "From: vaidhyanathan.sm@gmail.com" . "\r\n" ;
 
-mail($to,$subject,$txt,$headers);
 
-echo "<center>Your Booking has been confirmed. A Confirmation mail has been sent to 
-your registered E-mail address.<br><p>check the spam folder if not in inbox.</p></center>";
+$query = mysqli_query($conn,"SELECT * FROM bank WHERE ccnumber='$cnumber' AND cvv='$cvv'");
+$rows = mysqli_num_rows($query);
+if ($rows == 1) {
+    echo "<center>Your Booking has been confirmed. A Confirmation mail has been sent to 
+    your registered E-mail address.<br><p>check the spam folder if not in inbox.</p></center>";
+
+    $to = "vaidhyanathan.sm@gmail.com";
+    $subject = "Your Booking has been Confirmed.";
+    $txt = "Hello world!";
+    $headers = "From: vaidhyanathan.sm@gmail.com" . "\r\n" ;
+    
+    mail($to,$subject,$txt,$headers);
+
+}
+else {
+    $error = "Card Credentials are incorrect!";
+    echo "<script type='text/javascript'>alert('$error');</script>";
+    header("Location: confirm.html");
+    }
+
 ?>
-<center>
+ <center>
     <div class='container-fluid' width=50% height=50%>
-        <button class='btns' onclick='window.open("mainhome.php","_self")'>Go Back to Home Page</button>
+        <button class='btns' onclick="window.open('mainhome.php','_self');">Go Back to Home Page</button>
     </div>
 </center>
 

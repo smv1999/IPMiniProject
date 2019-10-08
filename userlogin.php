@@ -25,6 +25,7 @@ header("location: mainhome.php");
 } else {
 $error = "Username or Password is invalid";
 echo "<script type='text/javascript'>alert('$error');</script>";
+header("Location: userlogin.html");
 }
 
 ?>

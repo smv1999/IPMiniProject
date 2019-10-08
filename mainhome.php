@@ -261,9 +261,13 @@ td    {padding: 6px;}
 
        <?php
         session_start();
-        if($_SESSION['username'])
+        $username = $_SESSION['username'];
+        if(!isset($username))
         {
-          echo "<center>Hi " . $_SESSION["username"] . ".</center><br>";
+          header("Location: index.html");
+        }
+        else{
+          echo "<script type='text/javascript'>alert('Hi $username');</script>";
         }
        ?>
        <center><table border="2">

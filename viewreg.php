@@ -71,12 +71,31 @@ error_reporting(E_ALL ^ E_WARNING);
     }
     echo "</table></center>";
 
+    echo "<br><br>";
+
+    echo "<center><h2>Contact Requests</h2></center>";
+
+    $qry = "select * from contact;";
+    $queryRes = $conn->query($qry);
+    echo "<center><table id='customers' border='2' cellspacing='10' cellpadding='10'>";
+    while ($queryRows = $queryRes->fetch_row()) {
+        echo "<tr>";
+        for($i = 0; $i < $queryRes->field_count; $i++){
+            echo "<td>$queryRows[$i]</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table></center>";
+
+
+
 
     $conn->close();
 
 
 
 ?>
+<br><br>
 <center><button class="btn btn-primary" onclick="window.open('admindashboard.html','_self')">Go Back</button></center>
                     
 </body>

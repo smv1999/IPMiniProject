@@ -44,10 +44,11 @@ if (!$conn) {
 }
 
 error_reporting(E_ALL ^ E_WARNING); 
-
+// registered users
     $query = "select username,email from signup;";
     $queryResult = $conn->query($query);
     echo "<center><table id='customers' border='2' cellspacing='10' cellpadding='10'>";
+    echo "<tr><th>Username</th><th>Email Id</th></tr>";
     while ($queryRow = $queryResult->fetch_row()) {
         echo "<tr>";
         for($i = 0; $i < $queryResult->field_count; $i++){
@@ -56,12 +57,15 @@ error_reporting(E_ALL ^ E_WARNING);
         echo "</tr>";
     }
     echo "</table></center>";
-
+// Bookings
     echo "<center><h2>Auditorium Bookings</h2></center>";
 
     $qry = "select * from booking;";
     $queryRes = $conn->query($qry);
     echo "<center><table id='customers' border='2' cellspacing='10' cellpadding='10'>";
+    echo "<tr><th>Auditorium Name</th><th>Event Name</th><th>Date</th>
+    <th>Time</th><th>Amount</th><th>Booking Id</th></tr>";
+
     while ($queryRows = $queryRes->fetch_row()) {
         echo "<tr>";
         for($i = 0; $i < $queryRes->field_count; $i++){
@@ -72,12 +76,13 @@ error_reporting(E_ALL ^ E_WARNING);
     echo "</table></center>";
 
     echo "<br><br>";
-
+// contact requests
     echo "<center><h2>Contact Requests</h2></center>";
 
     $qry = "select * from contact;";
     $queryRes = $conn->query($qry);
     echo "<center><table id='customers' border='2' cellspacing='10' cellpadding='10'>";
+    echo "<tr><th>Username</th><th>Email Id</th><th>Subject</th><th>Message</th></tr>";
     while ($queryRows = $queryRes->fetch_row()) {
         echo "<tr>";
         for($i = 0; $i < $queryRes->field_count; $i++){

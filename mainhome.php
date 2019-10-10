@@ -4,8 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
 	<link rel="stylesheet" type="text/css" href="user_css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="user_css/component.css" />
 <!--===============================================================================================-->	
@@ -46,16 +45,6 @@
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
       padding-top: 30px;
     }
-
-    input[type=text], input[type=date]{
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-    }
-
     /* Modal Content/Box */
     .modal-content {
       background-color: #fefefe;
@@ -328,7 +317,7 @@ td    {padding: 6px;}
 
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
 					<p class="blackc">Date</p>
-						<input class="input100" type="date" id="dateofevt" name="dateoff" placeholder="Type your password">
+						<input class="input100" type="date" id="dateofevt" name="dateoff">
 					</div>
 					
           <p class="blackc">Auditorium Booking Request</p><br><br><br>
@@ -367,11 +356,22 @@ td    {padding: 6px;}
 							</button>
 						</div>
 					</div>
+   <br><br>
+          <div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+              <button type="button" class="login100-form-btn" onclick="giveFeedback();">Give Your Feedback</button>
+						</div>
+					</div>
 
 				</form>
 			</div>
 		</div>
-	</div>
+  </div>
+
+  
+          
+  
 	
 
 <!-- booking confirmed -->
@@ -487,10 +487,14 @@ function chat() {
   function check() {
     document.getElementById('id01').style.display='none';
     document.getElementById('id02').style.display='none';
-
-
-
   }
+
+function giveFeedback()
+{
+  window.open("https://docs.google.com/forms/d/e/1FAIpQLSd5tYvSWmIHFC0TSGOFx7rjg8MeG0zJCdR9lKSYspG5vgsQeA/viewform?usp=sf_link",
+  "_self");
+}
+
 function logout() {
   window.open("userlogin.html","_self");
 }

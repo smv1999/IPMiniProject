@@ -49,9 +49,10 @@ if ($rows == 1) {
     your registered E-mail address.<br><p>check the spam folder if not in inbox.</p></center>";
 
     $to = "vaidhyanathan.sm@gmail.com";
-    $subject = "Your Booking has been Confirmed.";
-    $txt = "Hello world!";
-    $headers = "From: vaidhyanathan.sm@gmail.com" . "\r\n" ;
+    $subject = "no-reply: Your Booking has been Confirmed.";
+    $txt = "Thank You for choosing AudyBuddy. We feel immense pleasure to serve you. Feel free to contact us for 
+    support at contact-support@audybuddy.com";
+    $headers = "From: booking_events@audybuddy.com" . "\r\n" ;
     
     mail($to,$subject,$txt,$headers);
 

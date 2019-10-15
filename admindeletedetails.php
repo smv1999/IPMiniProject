@@ -14,7 +14,7 @@ $sql="delete from adminhome where audname='$aud';";
 $result=mysqli_query($conn,$sql);
 error_reporting(E_ALL ^ E_WARNING); 
 if($result)
-{   echo "<script type='text/javascript'>alert('Successfully Deleted!');</script>";
+{   echo "<script type='text/javascript'>alert('Successfully Deleted!'); window.open('admindeletedetails.html','_self');</script>";
     $conn->close();
 }
 else

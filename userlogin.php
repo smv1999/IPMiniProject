@@ -24,8 +24,8 @@ if ($rows == 1) {
 header("location: mainhome.php"); 
 } else {
 $error = "Username or Password is invalid";
-echo "<script type='text/javascript'>alert('$error');</script>";
-header("Location: userlogin.html");
+echo "<script type='text/javascript'>alert('$error'); window.open('userlogin.html','_self');</script>";
+
 }
 
 ?>

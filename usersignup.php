@@ -12,6 +12,15 @@ $conn = mysqli_connect($servername, $username, $password,$dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+$usersql = "select * from signup where username='$user';";
+$query = mysqli_query($conn,$usersql);
+$rows = mysqli_num_rows($query);
+if($rows==1)
+{
+    echo "<script type='text/javascript'>alert('Username already exists!'); window.open('usersignup.html','_self');</script>";
+   
+}
+else{
 $sql="INSERT INTO signup(username,email,password) values ('$user','$email','$psw')";
 $result=mysqli_query($conn,$sql);
 error_reporting(E_ALL ^ E_WARNING); 
@@ -19,4 +28,5 @@ if($result)
 header("Location:userlogin.html");
 else
  echo "Error: " . $sql . "<br>" . mysqli_error($conn)
+}
 ?>

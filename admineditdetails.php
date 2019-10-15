@@ -17,7 +17,7 @@ $sql="INSERT INTO adminhome(audname,addr,seat,price) values ('$aud','$add','$sea
 $result=mysqli_query($conn,$sql);
 error_reporting(E_ALL ^ E_WARNING); 
 if($result)
-{   echo "<script type='text/javascript'>alert('Successfully Inserted!');</script>";
+{   echo "<script type='text/javascript'>alert('Successfully Inserted!'); window.open('admineditdetails.html','_self');</script>";
     $conn->close();
 }
 else

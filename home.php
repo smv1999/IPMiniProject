@@ -30,6 +30,9 @@ else if(strcasecmp($aud,"Festpomp")==0)
 {
     $cost = 250000;
 }
+$cookie_name = "cost";
+$cookie_value = $cost;
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 
 $sql="INSERT INTO booking(audname,eventname,dateoff,timeslot,cost) values ('$aud','$en','$dt','$tm','$cost')";
 $result=mysqli_query($conn,$sql);

@@ -41,27 +41,41 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+$qry = mysqli_query($conn,"SELECT balance from bankaccount;");
+$queryRows = $qry->fetch_row();
+$old = $queryRows[0];
+$amount = $_COOKIE["cost"];
+$cum = $old - $amount;
 
-$query = mysqli_query($conn,"SELECT * FROM bank WHERE ccnumber='$cnumber' AND cvv='$cvv'");
-$rows = mysqli_num_rows($query);
-if ($rows == 1) {
-    echo "<center>Your Booking has been confirmed. A Confirmation mail has been sent to 
-    your registered E-mail address.<br><p>check the spam folder if not in inbox.</p></center>";
+$sql = "UPDATE bankaccount SET balance='$cum' WHERE ccnumber='7898-4565-1232-7898'";
 
-    $to = "vaidhyanathan.sm@gmail.com";
-    $subject = "no-reply: Your Booking has been Confirmed.";
-    $txt = "Thank You for choosing AudyBuddy. We feel immense pleasure to serve you. Feel free to contact us for 
-    support at contact-support@audybuddy.com";
-    $headers = "From: booking_events@audybuddy.com" . "\r\n" ;
+if ($conn->query($sql) === TRUE) {
+
+
+    $query = mysqli_query($conn,"SELECT * FROM bank WHERE ccnumber='$cnumber' AND cvv='$cvv'");
+    $rows = mysqli_num_rows($query);
+    if ($rows == 1) {
+        echo "<center>Your Booking has been confirmed. A Confirmation mail has been sent to 
+        your registered E-mail address.<br><p>check the spam folder if not in inbox.</p></center>";
     
-    mail($to,$subject,$txt,$headers);
+        $to = "vaidhyanathan.sm@gmail.com";
+        $subject = "no-reply: Your Booking has been Confirmed.";
+        $txt = "Thank You for choosing AudyBuddy. We feel immense pleasure to serve you. Feel free to contact us for 
+        support at contact-support@audybuddy.com";
+        $headers = "From: booking_events@audybuddy.com" . "\r\n" ;
+        
+        mail($to,$subject,$txt,$headers);
+    
+    }
+    else {
+        $error = "Card Credentials are incorrect!";
+        echo "<script type='text/javascript'>alert('$error');</script>";
+        header("Location: confirm.html");
+        }
 
 }
-else {
-    $error = "Card Credentials are incorrect!";
-    echo "<script type='text/javascript'>alert('$error');</script>";
-    header("Location: confirm.html");
-    }
+
+
 
 ?>
  <center>
